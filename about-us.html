@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="home.html"> -->
+    <link rel="stylesheet" href="about_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+  
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* border: 1px solid #000; */
+    }
+    body{
+        background: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+       
+    }
+    /* ============NAVBAR-PART START HERE================ */
+    nav{
+        
+        /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); */
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        left: 0;
+       
+    }
+    nav ul{
+
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    nav li{
+        height: 45px;
+        
+    }
+    nav ul li a{
+        margin-top: 6px;
+        height: 100%;
+        padding: 15px 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        font-size: 21px;
+        position: relative;
+        
+    }
+    nav ul li a::after{
+        content: '';      
+        width: 0;
+        height: 3px;
+        /* background-color: rgb(206, 18, 106); */
+        background-color: red;
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        transition: 0.3s;
+        
+    }
+
+    nav ul li a h4{
+        margin-top: 1px;
+        font-size: 30px;
+    }
+    nav ul li a h4 span{
+        color: red;
+        font-weight: bold;
+        
+        font-size: 35px;
+        text-decoration: underline;
+        text-decoration-color: white;
+        text-decoration-thickness: 4px;
+        position: relative;
+        
+        
+    }
+    nav ul li a h4 span .dot{
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: 40;
+        top: 30px;
+        right: -10px;
+        background: white;
+    }
+    nav ul li a:hover::after{
+        width: 100%;
+        
+    }
+    nav ul li a:hover{
+        /* color: rgb(206, 18, 106); */
+        color: white;
+    }
+    nav li:first-child{
+        margin-right: auto;
+        
+    }
+    .sidebar{
+        position: fixed;
+        top: 0%;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: rgb(151, 148, 148);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3);
+        color: #000;
+        display: none;
+        flex-direction: column;align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .sidebar li{
+        width: 100%;
+    }
+    .sidebar a{
+        width: 100%;
+    }
+    .menu-btn{
+        display: none;
+    }
+    @media(max-width: 800px){
+        .hideonmbl{
+            display: none;
+        }
+        .menu-btn{
+            display: block;
+        }
+    }
+    @media(max-width: 400px){
+        .sidebar{
+            width: 100%;
+        }
+    }
+    #nav
+{
+    animation: nav linear;
+    animation-timeline: scroll();
+}
+@keyframes nav {
+    to 
+    {
+        backdrop-filter: blur(50px);
+        background-color: rgba(0, 0, 0, 0.123);
+    }
+    from
+     {
+        background:transparent;
+    }
+}
+/* ============NAVBAR-PART END HERE================ */
+    .banner{
+        width: 100%;
+        min-height: 550px;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(images/About-Us-Banner.jpg);
+    background-attachment: fixed;
+    }
+    .banner::after{
+        content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 550px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+    }
+
+    .banner-text{
+        position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 98vw;
+    top: 0;
+    overflow: hidden; 
+    }
+    /* .banner-text h1,span{
+        color: white;
+        
+    } */
+    .banner-text span{
+        color: red;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 65px;
+        font-weight: bolder;
+    }
+    .banner-text h1{
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 65px;
+        font-weight: bolder;
+         padding-left: 50px; 
+         overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid black;
+    padding-right: 5px;
+    animation: typing 3s steps(40) infinite alternate,blink 0.7s infinite;
+
+}
+@keyframes typing {
+    0% {
+        width: 0%;
+        visibility: hidden;
+    }
+    100% {
+        width: 47%;
+    }
+} 
+@keyframes blink {
+    50% {
+        border-color: white;
+    }
+    100% {
+        border-color: white;
+    }
+}
+
+    .section{
+        width: 100%;
+        min-height: 630px;
+        /* height: auto; */
+        background: white;
+    }
+    .section .container .row h1{
+        color: black;
+        margin-top: 30px;
+        /* text-decoration: underline; */
+        text-align: center;
+        font-size: 50px;
+    }
+    .section .container .row p{
+        color: black;
+        text-align: center;
+    }
+    .section .container .box{
+        width: 100%;
+        height: 410px;
+        /* min-height: 500px; */
+        margin-top: 30px;
+    }
+    .section .container .box img{
+        width: 100%;
+        height: 100%;
+    }
+    .section .container .box img:hover{
+    transition: 500ms;
+    overflow: hidden;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+    .section .container .content{
+        width: 100%;
+        min-height: 412px;
+        background: #000;
+        margin-top: 30px;
+    }
+    .section .container .content h2{
+        color: white;
+        font-size: 50px;
+        padding-top: 45px;
+        padding-left: 50px;
+        font-weight: bold;
+    }
+    .section .container .content h2:hover{
+        color: red;
+        transition: 500ms; 
+        cursor: pointer;
+    }
+    .section .container .content span{
+        color: red;
+        font-size: 50px;
+    }
+    .section .container .content p{
+        color: white;
+        padding: 30px;
+        margin-top: -10px;
+    }
+    .section .container .content .icons{
+        width: 100%;
+        margin-top: -30px;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .section .container .content .icons i{
+        font-size: 35px;
+        padding: 18px;
+        color: white;
+        
+    }
+    .section .container .content .icons i:first-child:hover{
+        color: rgb(0, 68, 255);
+        transition: 400ms;
+    }
+    .section .container .content .icons i:nth-child(2):hover{
+        color: rgb(255, 0, 85);
+        transition: 400ms;
+    }
+    .section .container .content .icons i:nth-child(3):hover{
+        color: rgb(0, 68, 255);
+        transition: 400ms;
+    }
+    .section .container .content .icons i:nth-child(4):hover{
+        color: gray;
+        transition: 400ms;
+    }
+    .bg{
+        width: 100%;
+    height: 70vh;
+    background-image: url(images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-attachment: fixed;
+position: relative;
+    }
+
+    /* ============FOOTER-PART START HERE================ */
+footer{
+      
+      width: auto;
+      height: fit-content;
+      background: #000;
+  }
+  footer .container span{
+      color: #CB3577;
+      cursor: pointer;
+  }
+  footer .container .row h1{
+      color: white;
+      margin-top: 15px;
+      /* font-size: 50px; */
+  }
+  footer .container .row h1:hover{
+      color: #CB3577;
+      transition: 0.3s;
+      cursor: grab;
+  }
+  .web-dev a{
+      color: white;
+      font-size: 20px;
+      padding-left: 2%;
+      text-decoration: none;
+  }
+  .web-dev label{
+      color: #CB3577;
+      padding-left: 2%;
+  }
+  .web-dev p{
+      color: white;
+      padding-left: 2%;
+      font-size: 17px;
+  }
+  .web-dev p:hover{
+      color: #CB3577;
+      transition: 0.2s;
+     
+  }
+  .web-link{
+      display: flex;
+      flex-direction: column;
+     line-height: 40px;
+  }
+  .web-link a{
+      color: white;
+      font-size: 17px;
+      text-decoration: none;
+      padding-left: 4%;
+  }
+  .web-link a:hover{
+      color: #CB3577;
+      transition: 0.2s;
+  }
+ .social-link{
+  font-size: 35px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  
+ }
+ .social-link a{
+  color: white;
+ padding: 3%;
+ margin: 10px;
+ 
+ }
+ .social-link a i:first-child:hover{
+        color: blue;
+        transition: 0.3s;
+        background-color: whitesmoke;
+        border-radius: 2px;
+    }
+    .social-link a:nth-child(3) i:hover{
+        color: #fa0a72;
+        transition: 0.3s;
+        background-color: whitesmoke;
+        border-radius: 2px;
+    }
+
+ /* ============FOOTER-PART END HERE================ */
+
+
+ .dept{
+    position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 85vh;
+   /* height:auto; */
+   background-color: #2D3A3D;
+  
+}
+
+.demo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin: 70px;   */
+}
+
+.demo .card{
+  position: relative;
+  background-color: rgb(240, 237, 237);
+  /* 
+  padding: 20px 15px; */
+  max-width: 290px;
+  height: 260px;
+  display: flex;
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.8);
+  transition: 300ms ease-in-out;
+  margin: 30px 3px;
+}
+
+.demo .card:hover {
+   height: 520px;
+   cursor: pointer;
+   
+}
+
+.demo .card .img-box {
+  /*
+  
+    /* */
+  
+    /* left: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+   */ 
+  position: relative;
+  width: auto;
+  top: -30px;
+  left: -5px;
+  height: 560px;
+  z-index: 1;
+}
+
+.demo .card .img-box img {
+  /* max-width: 100%;
+  height: 150%; */
+  border-radius: 4px;
+  padding: 10px;
+  width: 300px;
+  height: 260px;
+  
+}
+.demo .card .img-box img:hover{
+    border-radius: 80%;
+    width: 300px;
+    margin-left: -1px;
+    transition: 400ms ease-in-out;
+}
+
+
+.demo .card .contentsss {
+  position: relative;
+  margin-top: -40px;
+  padding: 15px 15px;
+  text-align: center;
+  color: black;
+  font-size: 17px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 300ms ease-in-out;
+}
+.demo .card .contentsss h5{
+    margin-top: -10px;
+    text-align: left;
+    color: red;
+}
+.demo .card .contentsss h1 , h3{
+    text-align: left;
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.demo .card:hover .contentsss {
+  visibility: visible;
+  opacity: 1;
+  
+  transition-delay: 300ms;
+}
+
+.demo .card .contentsss .icon{
+       
+       display: flex;
+       font-size: 33px;
+       justify-content: space-evenly;
+       color: rgb(6, 9, 212);
+       
+       cursor:  pointer;
+   }
+   .demo .card .contentsss p :nth-child(1):hover{
+    transition: 400ms;
+    color: rgb(6, 9, 212);
+   
+   }
+   .demo .card .contentsss .icon i:nth-child(2){
+    transition: 400ms;
+    color: rgb(250, 38, 108);
+   
+   }
+   .demo .card .contentsss .icon i:nth-child(3){
+    transition: 400ms;
+    color: rgb(4, 139, 202);
+   
+   }
+ 
+   ::selection{
+    color:#151320;
+    background-color:#ea003e;
+  }
+
+  ::-webkit-scrollbar{
+    width:15px;
+    background-color: #151320;
+    transition: 0.3s;
+  }
+  ::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg, #151320, #ea003e);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(180deg, #ea003e, #151320);
+    border-radius: 10px;
+
+  }
+
+  ::-webkit-scrollbar-track{
+    box-shadow: inset 1px 1px 4px #0ff;
+    border-radius: 10px;
+  }
+
+  .gotopage{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    background: #ea003e;
+    right: 25px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.gotopage:hover{
+    background-color: transparent;
+    color: white;
+    border: 2px solid #ffffff;
+    transition:  500ms;
+}
+
+#page_up
+{
+    animation: page_up linear;
+    animation-timeline: scroll();
+}
+@keyframes page_up {
+    to 
+    {
+        visibility: visible;
+    }
+    from
+     {
+        
+        visibility: hidden;
+    }
+}
+
+
+#loader{
+  width: 100%;
+  height: 100vh;
+  background: #000 url(images/pre-loader.png) no-repeat center;
+  position: fixed;
+  z-index: 100;
+}
+
+
+</style>
+<body>
+    <div id="loader">
+      
+    </div>
+    
+    <!-- =====NAVBAR START======= -->
+    <nav id="nav">
+        <ul class="sidebar">
+            <li onclick=HideSidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#depart">Department</a></li>
+            <li><a href="#about_us">Services</a></li>      
+            <li><a href="#">Offers</a></li>
+            <li><a href="#">Client Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+            </ul>
+        <ul>
+            <li><a href="#"><h4>Global <span>Reach <div class="dot"></div></span> </h4></a></li>
+        <li class="hideonmbl"><a href="home.html">Home</a></li>
+        <li class="hideonmbl"><a href="real-about-us.html">About Us</a></li>
+        <li class="hideonmbl"><a href="#depart">Department</a></li>
+        <li class="hideonmbl"><a href="#">Services</a></li>
+        <li class="hideonmbl"><a href="#">Offers</a></li>
+        <li class="hideonmbl"><a href="#">Client Products</a></li>
+        <li class="hideonmbl"><a href="contact-us.html">Contact Us</a></li>
+        <li class="menu-btn" onclick=ShowSidebar()><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    <!-- =====NAVBAR END======= -->
+
+    <div class="banner">    
+    </div>
+    <div class="banner-text">
+        <h1>GLOBAL <span>REACH</span></h1>
+    </div>
+    <div class="section">
+    <div class="container">
+        <div class="row">
+            <h1>About Us</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum incidunt facilis voluptates suscipit, nobis voluptatibus?</p>
+            <div class="col-md-6">
+                <div class="box">
+                    <img src="images/insta-Ai-img-special-another1.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <h2>Global <span>Reach</span></h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel autem repellendus temporibus. Pariatur corrupti fugit quibusdam? Maiores, quaerat ea. Inventore, labore enim vitae libero eligendi eaque, magnam nihil molestiae neque, quas ipsa? Eius impedit consequatur facere hic praesentium, eum commodi ex. Optio velit, placeat nisi excepturi sunt corporis cumque accusantium praesentium, eum commodi ex. Optio velit, placeat nisi excepturi sunt corporis cumque!</p>
+
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook-f"></i>
+                          <i class="fa-brands fa-instagram"></i>
+                          <i class="fa-brands fa-twitter"></i>
+                          <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg"></div>
+
+
+   <div class="dept">
+    <div class="demo"> 
+        
+      <div class="card">
+      <div class="img-box">
+        <img src="images/about-us-first-img.jpg" width="250px" height="200px"/>
+      </div>
+        <div class="contentsss">
+          <h1>Mr Owais Farhan</h1>
+          <h5>Graphic Designer</h5>
+          <hr>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, totam veniam corrupti laudantium alias laborum atque....</p>
+          <hr>
+          <p class="icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+          </p>
+          
+        </div>
+      </div>
+      <div class="card">
+      <div class="img-box">
+        <img src="images/boy-employee-1.jpg"/>
+      </div>
+        <div class="contentsss">
+            <h1>Mr Hafiz Ahmed</h1>
+          <h5>Software Engineer</h5>
+          <hr>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, totam veniam corrupti laudantium alias laborum atque?</p>
+          <hr>
+          <p class="icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img-box">
+          <img src="images/girl-employee-1.jpg"/>
+        </div>
+          <div class="contentsss">
+            <h3>Miss Zainab Naseer</h3>
+            <h5>Seo Expert</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, totam veniam corrupti laudantium alias laborum atque?</p>
+            <hr>
+            <p class="icon">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </p>
+          </div>
+        </div>
+      <div class="card">
+      <div class="img-box">
+        <img src="images/about-us-second-img.jpg"/>
+      </div>
+        <div class="contentsss">
+            <h1>Miss Hafsa Rashid</h1>
+            <h5>Content Writer</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, totam veniam corrupti laudantium alias laborum atque?</p>
+            <hr>
+            <p class="icon">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<a href="#" class="gotopage" id="page_up"><i class="fa-solid fa-arrow-up"></i></a>
+
+ <!-- =====FOOTER START======= -->
+ <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Web <span>DEV</span></h1>
+              <div class="web-dev">
+                <a href=""><i class="fa-regular fa-paper-plane"></i><label> E-mail: </label>
+                <p>23ahmedzubair@gmail.com</p></a>
+
+                <a href=""><i class="fa-solid fa-phone"></i><label> Call: </label>
+                    <p>+92 3171028891</p></a>
+
+                    <a href=""><i class="fa-solid fa-location-dot"></i><label> Call: </label>
+                        <p>Karachi Pakistan</p></a>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <h1>Web <span>LINKS</span></h1>
+               <div class="web-link">
+                <a href="">Portfolio</a>
+                <a href="">About Me</a>
+                <a href="">Gallery</a>
+                <a href="">Blog</a>
+                <a href="">Contact Me</a>
+               </div>
+            </div>
+            <div class="col-md-4">
+                <h1>Social <span>LINKS</span></h1>
+                <div class="social-link">
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- =====FOOTER END======= -->
+</body>
+</html>
+<script>
+    
+    function ShowSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+    }
+    function HideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+    }
+
+
+    
+</script>
+<script>
+    var preloader = document.getElementById("loader");
+    window.addEventListener("load" , function(){
+      preloader.style.display = "none"
+    })
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
